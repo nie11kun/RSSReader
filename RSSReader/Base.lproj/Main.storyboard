@@ -1,26 +1,276 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BRZ-U5-o4u">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Top Album-->
+        <scene sceneID="iQf-VB-G1U">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LoP-X7-w12" customClass="TopMediaController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="9cn-PK-ZFj"/>
+                        <viewControllerLayoutGuide type="bottom" id="7iN-Qa-cGz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="G95-yk-Uqf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qdT-FZ-2hW">
+                                <rect key="frame" x="36" y="25" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjP-rd-GFV">
+                                <rect key="frame" x="166.5" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKp-he-XBf">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0S7-9U-QwP"/>
+                                    <constraint firstAttribute="height" constant="200" id="uoM-ib-Z9z"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kKp-he-XBf" firstAttribute="centerY" secondItem="G95-yk-Uqf" secondAttribute="centerY" id="8pg-Ob-m0u"/>
+                            <constraint firstItem="qdT-FZ-2hW" firstAttribute="top" secondItem="9cn-PK-ZFj" secondAttribute="bottom" constant="5" id="CbL-3T-swC"/>
+                            <constraint firstItem="qdT-FZ-2hW" firstAttribute="centerX" secondItem="G95-yk-Uqf" secondAttribute="centerX" id="IVn-ey-X8R"/>
+                            <constraint firstItem="qdT-FZ-2hW" firstAttribute="leading" secondItem="G95-yk-Uqf" secondAttribute="leadingMargin" constant="20" id="JFx-2c-gED"/>
+                            <constraint firstItem="pjP-rd-GFV" firstAttribute="top" secondItem="qdT-FZ-2hW" secondAttribute="bottom" constant="5" id="NyY-iB-iJV"/>
+                            <constraint firstItem="kKp-he-XBf" firstAttribute="centerX" secondItem="G95-yk-Uqf" secondAttribute="centerX" id="P8P-YZ-LJi"/>
+                            <constraint firstItem="pjP-rd-GFV" firstAttribute="centerX" secondItem="G95-yk-Uqf" secondAttribute="centerX" id="XiR-h5-3Kw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qdT-FZ-2hW" secondAttribute="trailing" constant="20" id="qDE-vu-PDg"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Top Album" image="Top Album Icon" id="v4P-Wo-uIT"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Album Title"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="feedURL" value="http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topalbums/limit=1/json"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="artistLabel" destination="pjP-rd-GFV" id="Xf1-Rz-XLJ"/>
+                        <outlet property="imageView" destination="kKp-he-XBf" id="uw8-gL-vTW"/>
+                        <outlet property="titleLabel" destination="qdT-FZ-2hW" id="mTM-kH-1gW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfq-5R-buJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1841" y="-518"/>
+        </scene>
+        <!--Top App-->
+        <scene sceneID="s8d-aL-HIO">
+            <objects>
+                <viewController id="NiN-JV-N20" customClass="TopMediaController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JHx-2H-o0D"/>
+                        <viewControllerLayoutGuide type="bottom" id="CR6-ge-RTA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yIf-Bs-szc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-ZA-nIp">
+                                <rect key="frame" x="36" y="25" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIn-l2-fLD">
+                                <rect key="frame" x="166.5" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUd-kZ-EuC">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Sje-QN-fu5"/>
+                                    <constraint firstAttribute="height" constant="200" id="iCt-aO-gfg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PIn-l2-fLD" firstAttribute="top" secondItem="R6S-ZA-nIp" secondAttribute="bottom" constant="5" id="1Kj-PM-YiP"/>
+                            <constraint firstItem="FUd-kZ-EuC" firstAttribute="centerX" secondItem="yIf-Bs-szc" secondAttribute="centerX" id="Itw-Te-oOR"/>
+                            <constraint firstItem="R6S-ZA-nIp" firstAttribute="leading" secondItem="yIf-Bs-szc" secondAttribute="leadingMargin" constant="20" id="cNz-3w-gLt"/>
+                            <constraint firstItem="PIn-l2-fLD" firstAttribute="centerX" secondItem="yIf-Bs-szc" secondAttribute="centerX" id="f2d-u0-Avv"/>
+                            <constraint firstItem="FUd-kZ-EuC" firstAttribute="centerY" secondItem="yIf-Bs-szc" secondAttribute="centerY" id="igW-cr-Xx5"/>
+                            <constraint firstItem="R6S-ZA-nIp" firstAttribute="centerX" secondItem="yIf-Bs-szc" secondAttribute="centerX" id="kaE-ZW-dJe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R6S-ZA-nIp" secondAttribute="trailing" constant="20" id="ku7-KW-Mkg"/>
+                            <constraint firstItem="R6S-ZA-nIp" firstAttribute="top" secondItem="JHx-2H-o0D" secondAttribute="bottom" constant="5" id="uap-bI-Hiz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top App" image="Top App Icon" id="di5-ae-g0n"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="App Title"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="feedURL" value="http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=1/json"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="artistLabel" destination="PIn-l2-fLD" id="jQa-xe-vn4"/>
+                        <outlet property="imageView" destination="FUd-kZ-EuC" id="Ldi-uL-mc3"/>
+                        <outlet property="titleLabel" destination="R6S-ZA-nIp" id="6MK-Cb-C73"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shF-71-J2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="161"/>
+        </scene>
+        <!--Top Moive-->
+        <scene sceneID="5g2-zC-oar">
+            <objects>
+                <viewController id="Imi-cp-2el" customClass="TopMediaController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AZz-Ht-O7v"/>
+                        <viewControllerLayoutGuide type="bottom" id="u3f-en-Q64"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Exv-YH-SGK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="y9K-Pe-DEn">
+                                <rect key="frame" x="36" y="25" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcp-3R-8J0">
+                                <rect key="frame" x="166.5" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CHf-Ow-Tm0">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Cma-Jr-xY6"/>
+                                    <constraint firstAttribute="height" constant="200" id="X7n-HB-PeV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y9K-Pe-DEn" firstAttribute="top" secondItem="AZz-Ht-O7v" secondAttribute="bottom" constant="5" id="13f-q3-Fi9"/>
+                            <constraint firstItem="CHf-Ow-Tm0" firstAttribute="centerY" secondItem="Exv-YH-SGK" secondAttribute="centerY" id="1yJ-f5-vgY"/>
+                            <constraint firstItem="hcp-3R-8J0" firstAttribute="top" secondItem="y9K-Pe-DEn" secondAttribute="bottom" constant="5" id="5oL-D7-eZP"/>
+                            <constraint firstItem="y9K-Pe-DEn" firstAttribute="leading" secondItem="Exv-YH-SGK" secondAttribute="leadingMargin" constant="20" id="F8T-6E-eqX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y9K-Pe-DEn" secondAttribute="trailing" constant="20" id="bit-xn-nxC"/>
+                            <constraint firstItem="y9K-Pe-DEn" firstAttribute="centerX" secondItem="Exv-YH-SGK" secondAttribute="centerX" id="oLR-Yd-5Xo"/>
+                            <constraint firstItem="CHf-Ow-Tm0" firstAttribute="centerX" secondItem="Exv-YH-SGK" secondAttribute="centerX" id="x4o-za-Xmm"/>
+                            <constraint firstItem="hcp-3R-8J0" firstAttribute="centerX" secondItem="Exv-YH-SGK" secondAttribute="centerX" id="yKA-1I-pi2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top Moive" image="Top Movie Icon" id="uJM-bN-bYq"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Movie Title"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="feedURL" value="http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/limit=1/json"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="artistLabel" destination="hcp-3R-8J0" id="fnx-3a-1o5"/>
+                        <outlet property="imageView" destination="CHf-Ow-Tm0" id="ROz-Xe-ur8"/>
+                        <outlet property="titleLabel" destination="y9K-Pe-DEn" id="dYD-LC-kBC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wAP-nZ-u9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="853"/>
+        </scene>
+        <!--Top Song-->
+        <scene sceneID="9FS-se-fTk">
+            <objects>
+                <viewController id="Hn5-jy-aW6" customClass="TopMediaController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CEm-sR-htF"/>
+                        <viewControllerLayoutGuide type="bottom" id="K0g-sW-cCq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j3h-RB-oFt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tOo-Je-lhx">
+                                <rect key="frame" x="36" y="25" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMM-LP-2SO">
+                                <rect key="frame" x="166.5" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQU-Rw-1nu">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EnD-kv-0TI"/>
+                                    <constraint firstAttribute="height" constant="200" id="gE4-bX-PXW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CMM-LP-2SO" firstAttribute="centerX" secondItem="j3h-RB-oFt" secondAttribute="centerX" id="47v-ai-lGI"/>
+                            <constraint firstItem="CMM-LP-2SO" firstAttribute="top" secondItem="tOo-Je-lhx" secondAttribute="bottom" constant="5" id="Qk1-L1-yS8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tOo-Je-lhx" secondAttribute="trailing" constant="20" id="UID-08-yht"/>
+                            <constraint firstItem="gQU-Rw-1nu" firstAttribute="centerX" secondItem="j3h-RB-oFt" secondAttribute="centerX" id="YhV-h2-UJk"/>
+                            <constraint firstItem="tOo-Je-lhx" firstAttribute="leading" secondItem="j3h-RB-oFt" secondAttribute="leadingMargin" constant="20" id="ZIJ-kW-XHy"/>
+                            <constraint firstItem="gQU-Rw-1nu" firstAttribute="centerY" secondItem="j3h-RB-oFt" secondAttribute="centerY" id="ibK-fc-yqi"/>
+                            <constraint firstItem="tOo-Je-lhx" firstAttribute="top" secondItem="CEm-sR-htF" secondAttribute="bottom" constant="5" id="roD-mp-TZJ"/>
+                            <constraint firstItem="tOo-Je-lhx" firstAttribute="centerX" secondItem="j3h-RB-oFt" secondAttribute="centerX" id="vpV-lQ-zc4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top Song" image="Top Song Icon" id="MXJ-JY-dZn"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Song Title"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="feedURL" value="http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=1/json"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="artistLabel" destination="CMM-LP-2SO" id="6vK-CB-bKo"/>
+                        <outlet property="imageView" destination="gQU-Rw-1nu" id="Iw5-TF-yHW"/>
+                        <outlet property="titleLabel" destination="tOo-Je-lhx" id="VUN-Zz-0ry"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98K-ch-X4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840.8" y="-1307.4962518740631"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Rjh-Ej-zW3">
+            <objects>
+                <tabBarController id="BRZ-U5-o4u" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ehp-8h-crM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hn5-jy-aW6" kind="relationship" relationship="viewControllers" id="fk1-Lk-Ox9"/>
+                        <segue destination="LoP-X7-w12" kind="relationship" relationship="viewControllers" id="ddr-lp-9H0"/>
+                        <segue destination="NiN-JV-N20" kind="relationship" relationship="viewControllers" id="ilE-ml-qoG"/>
+                        <segue destination="Imi-cp-2el" kind="relationship" relationship="viewControllers" id="svE-HU-tb7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6U-JG-hfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="-188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Top Album Icon" width="28" height="28"/>
+        <image name="Top App Icon" width="18" height="28"/>
+        <image name="Top Movie Icon" width="22" height="28"/>
+        <image name="Top Song Icon" width="17" height="29"/>
+    </resources>
 </document>
